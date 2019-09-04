@@ -215,6 +215,10 @@ def main(config_file=None, args=None, config=None):
         from .action_group import Run  # @Reimport
         update_repos_from_groups = False
 
+    elif arg0 == 'worktree':
+        from .acction_add_worktree import Run  # @Reimport
+        update_repos_from_groups = False
+
     # change global repos list to the current group, if any
     if update_repos_from_groups:
         group_repos = config.groups.get(config.current_group, None)
